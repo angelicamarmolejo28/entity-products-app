@@ -7,6 +7,6 @@ namespace ProductStore.Web.Utils
 {
     public class Configuracion
     {
-        public static readonly string URL_DEFAULT = "~/Default.aspx";
+        public static readonly string URL_DEFAULT = "~/Login.aspx";
     }
 }
