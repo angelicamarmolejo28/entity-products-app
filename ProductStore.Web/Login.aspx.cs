@@ -1,4 +1,5 @@
 ﻿using ProductsStore.Back.Fachada;
+using ProductStore.Web.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace ProductStore.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (new Utils.Utils().sesionCerrada()) return;
             DivAlerta.Visible = false;
         }
 
@@ -37,6 +39,7 @@ namespace ProductStore.Web
                 }
                 else
                 {
+                    SessionManager.usuario = new Fachada().ConsultarUsuario(txtuser.Text, txtPass.Text);
                     Response.Redirect("Forms/Index");
                 }
             }

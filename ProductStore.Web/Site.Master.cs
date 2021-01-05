@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductStore.Web.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace ProductStore.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblUser.Text = SessionManager.usuario.Name;
         }
     }
 }
