@@ -27,8 +27,8 @@
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
 
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#">
+				<li><a href="Index.aspx">
 					<em class="fa fa-home"></em>
 				</a></li>
 				<li class="active">Panel de Control</li>
