@@ -1,4 +1,5 @@
-﻿using ProductsStore.Back.Procesos.Negocio;
+﻿using ProductsStore.Back.Maestros;
+using ProductsStore.Back.Procesos.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace ProductsStore.Back.Fachada
         public string ValidarUsuario(string UserName, string Pass)
         {
             return new UsuarioNegocio().ValidarUsuario(UserName, Pass);
+        }
+        public Usuarios ConsultarUsuario(string UserName, string Pass)
+        {
+            return new UsuarioNegocio().ConsultarUsuario(UserName, Pass);
         }
     }
 }
