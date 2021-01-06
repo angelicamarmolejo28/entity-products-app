@@ -18,5 +18,13 @@ namespace ProductsStore.Back.Fachada
         {
             return new UsuarioNegocio().ConsultarUsuario(UserName, Pass);
         }
+        public string CrearProducto(string Nombre, string Descripcion, string Categoria, string Disponibilidad, int Precio, string ImagenURL)
+        {
+            return new ProductosNegocio().CrearProducto(Nombre, Descripcion, Categoria, Disponibilidad, Precio, ImagenURL);
+        }
+        public int ValidarCodigo()
+        {
+            return new ProductosNegocio().ValidarCodigo();
+        }
     }
 }

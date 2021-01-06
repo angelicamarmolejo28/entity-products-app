@@ -77,10 +77,10 @@
 		<div class="divider"></div>
 		
 		<ul class="nav menu">
-			<li ><a href="Forms/CrearForm.aspx"><em class="fa fa-plus-circle">&nbsp;</em> Crear Productos</a></li>
-			<li><a href="Forms/EditForm.aspx"><em class="fa fa-edit">&nbsp;</em> Editar Productos</a></li>
-			<li><a href="Forms/DeleteForm.aspx"><em class="fa fa-th-list">&nbsp;</em> Detalle de Productos</a></li>
-			<li><a href="Forms/ListForm.aspx"><em class="fa fa-trash-alt">&nbsp;</em> Eliminar Productos</a></li>
+			<li ><a href="CrearForm.aspx"><em class="fa fa-plus-circle">&nbsp;</em> Crear Productos</a></li>
+			<li><a href="EditForm.aspx"><em class="fa fa-edit">&nbsp;</em> Editar Productos</a></li>
+			<li><a href="DeleteForm.aspx"><em class="fa fa-th-list">&nbsp;</em> Detalle de Productos</a></li>
+			<li><a href="ListForm.aspx"><em class="fa fa-trash-alt">&nbsp;</em> Eliminar Productos</a></li>
 			
 			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Cerrar Sesión</a></li>
 		</ul>

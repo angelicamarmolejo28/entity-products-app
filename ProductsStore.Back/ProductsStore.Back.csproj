@@ -43,8 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fachada\Fachada.cs" />
+    <Compile Include="Maestros\Productos.cs" />
     <Compile Include="Maestros\Usuarios.cs" />
+    <Compile Include="Procesos\DAO\ProductosDAO.cs" />
     <Compile Include="Procesos\DAO\UsuarioDAO.cs" />
+    <Compile Include="Procesos\Negocio\ProductosNegocio.cs" />
     <Compile Include="Procesos\Negocio\UsuarioNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
