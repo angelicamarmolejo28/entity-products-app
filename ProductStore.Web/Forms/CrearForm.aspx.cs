@@ -11,18 +11,26 @@ namespace ProductStore.Web.Forms
 {
     public partial class CrearForm : System.Web.UI.Page
     {
+        private string ImagenDataURL64 = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             alertVal.Visible = false;
             if (new Utils.Utils().sesionCerrada()) return;
+            txtCodProd.Enabled = false;
 
-            lblCodProd.Text = Convert.ToString(new Fachada().ValidarCodigo());
+            txtCodProd.Text = Convert.ToString(new Fachada().ValidarCodigo());
+            lbtnCrearProducto.Visible = false;
         }
 
         protected void lbtnCrearProducto_Click(object sender, EventArgs e)
         {
-
-            if (txtNombre.Text == "")
+            
+            if (ImagenCargada.ImageUrl=="")
+            {
+                alertVal.Visible = true;
+                lblAlerta.Text = "Por favor cargar la imagen del producto.";
+            }
+            else if (txtNombre.Text == "")
             {
                 alertVal.Visible = true;
                 lblAlerta.Text = "El campo Nombre de Producto es Obligatorio Ingresarlo.";
@@ -49,16 +57,6 @@ namespace ProductStore.Web.Forms
             }
             else
             {
-                int TamañoImagen = FileUpload1.PostedFile.ContentLength;
-                byte[] ImagenOrginal = new byte[TamañoImagen];
-
-                FileUpload1.PostedFile.InputStream.Read(ImagenOrginal, 0, TamañoImagen);
-
-                Bitmap ImagenBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
-
-                string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOrginal);
-
-                ImagenCargada.ImageUrl = ImagenDataURL64;
 
                 string respuesta = new Fachada().CrearProducto(txtNombre.Text.Trim(), txtDescr.Text.Trim(), ddlCategoria.SelectedItem.Text, ddlDisponibilidad.SelectedItem.Text, Convert.ToInt32(txtPrecio.Text), ImagenDataURL64);
 
@@ -70,8 +68,27 @@ namespace ProductStore.Web.Forms
                 txtPrecio.Text = string.Empty;
                 ddlCategoria.SelectedIndex = 0;
                 ddlDisponibilidad.SelectedIndex = 0;
+                lbtnSubir.Visible = true;
+                lbtnCrearProducto.Visible = false;
             }
 
+        }
+
+        protected void lbtnSubir_Click(object sender, EventArgs e)
+        {
+            int TamañoImagen = FileUpload1.PostedFile.ContentLength;
+            byte[] ImagenOrginal = new byte[TamañoImagen];
+
+            FileUpload1.PostedFile.InputStream.Read(ImagenOrginal, 0, TamañoImagen);
+
+            Bitmap ImagenBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
+
+            ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOrginal);
+
+            ImagenCargada.ImageUrl = ImagenDataURL64;
+
+            lbtnCrearProducto.Visible = true;
+            lbtnSubir.Visible = false;
         }
     }
 }
