@@ -16,6 +16,12 @@
                 <strong>Allerta!</strong> <asp:Label ID="lblAlerta" runat="server" Text=""></asp:Label>
             </div>
 			</div>
+        <div class="container col-4">
+				  <div class="alert alert-success alert-dismissible" role="alert" runat="server" id="alertsucc">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Allerta!</strong> <asp:Label ID="lblsucc" runat="server" Text=""></asp:Label>
+            </div>
+			</div>
           
 		<div class="row">
 			<div class="col-lg-12">
