@@ -13,7 +13,7 @@ namespace ProductsStore.Back.Maestros
         public string Name { get; set; }
         public string LastName { get; set; }
         public string TypeUser { get; set; }
-        public bool StatusUser { get; set; }
+        public bool StatusUser { get; set; } 
         public string EmailUser { get; set; }
         
     }

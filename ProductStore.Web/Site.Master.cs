@@ -14,5 +14,11 @@ namespace ProductStore.Web
         {
             lblUser.Text = SessionManager.usuario.Name;
         }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            SessionManager.usuario = null;
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }

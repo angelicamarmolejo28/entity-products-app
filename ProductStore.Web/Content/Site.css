@@ -15,7 +15,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    min-width:100%
 }
 
 
@@ -29,3 +29,9 @@ textarea {
         padding: 0;
     }
 }
+
+#txtCodProd,#txtNombre, #txtDescr,#ddlCategoria, #ddlDisponibilidad, #txtPrecio{
+    min-width:100%;
+}
+
+

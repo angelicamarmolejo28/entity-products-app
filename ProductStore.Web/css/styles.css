@@ -56,7 +56,9 @@ h3, h4 {
 input.form-control {
   border: 1px solid #ddd;
   box-shadow: none;
-  height: 46px; }
+  height: 46px;
+  min-width:100%;
+}
 
 .bootstrap-table input.form-control {
   height: 34px; }
