@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ProductsStore.Back.Maestros;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,7 +19,7 @@ namespace ProductsStore.Back.Procesos.DAO
             string respuesta = null;
             using (SqlConnection con = new SqlConnection(Conexion))
             {
-                string sentencia = "exec Products_Prod_CRUD 1,'" + Nombre + "','" + Descripcion + "','"+Categoria+"','"+Disponibilidad+"','"+Precio+"','"+ImagenURL+"'";
+                string sentencia = "exec Products_Prod_CRUD 1,''," + Nombre + "','" + Descripcion + "','"+Categoria+"','"+Disponibilidad+"','"+Precio+"','"+ImagenURL+"'";
                 SqlCommand cmd = new SqlCommand(sentencia, con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -35,16 +37,58 @@ namespace ProductsStore.Back.Procesos.DAO
             int cod = 0;
             using (SqlConnection con = new SqlConnection(Conexion))
             {
-                string sentencia = "exec Products_Prod_CRUD 2,'','','','','',''";
+                string sentencia = "exec Products_Prod_CRUD 2,'','','','','','',''";
                 SqlCommand cmd = new SqlCommand(sentencia, con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    cod = rdr[0] == DBNull.Value ? 0 : rdr.GetInt32(0);
+                    cod = rdr[0] == DBNull.Value ? 1 : rdr.GetInt32(0);
                 }
                 return cod;
+            }
+        }
+
+        internal Productos BuscarProducto(string Prod)
+        {
+            Productos prodc = new Productos();
+            using (SqlConnection con = new SqlConnection(Conexion))
+            {
+                string sentencia = "exec Products_Prod_CRUD 3,'','" + Prod + "','','','','',''";
+                SqlCommand cmd = new SqlCommand(sentencia, con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    prodc.CodigoProducto = rdr[0] == DBNull.Value ? 0 : rdr.GetInt32(0);
+                    prodc.NombreProducto = rdr[1] == DBNull.Value ? "" : rdr.GetString(1).Trim();
+                    prodc.DescripcionProducto = rdr[2] == DBNull.Value ? "" : rdr.GetString(2).Trim();
+                    prodc.CategoriaProducto = rdr[3] == DBNull.Value ? "" : rdr.GetString(3).Trim();
+                    prodc.DisponiblidadProducto = rdr[4] == DBNull.Value ? "" : rdr.GetString(4).Trim();
+                    prodc.PrecioProducto = rdr[5] == DBNull.Value ? 0 : Convert.ToInt32(rdr.GetValue(5));
+                    prodc.ImagenProducto = rdr[6] == DBNull.Value ? "" : rdr.GetString(6).Trim(); 
+                }
+                return prodc;
+            }
+        }
+
+        internal string EditarProducto(Productos prodEdit)
+        {
+            string respuesta = null;
+            using (SqlConnection con = new SqlConnection(Conexion))
+            {
+                string sentencia = "exec Products_Prod_CRUD 4,'"+prodEdit.CodigoProducto+"','" + prodEdit.NombreProducto + "','" + prodEdit.DescripcionProducto + "','','','" + prodEdit.PrecioProducto + "',''";
+                SqlCommand cmd = new SqlCommand(sentencia, con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    respuesta = rdr[0] == DBNull.Value ? "" : rdr.GetString(0).Trim();
+                }
+                return respuesta;
             }
         }
 

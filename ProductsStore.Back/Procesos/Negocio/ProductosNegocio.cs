@@ -1,4 +1,5 @@
-﻿using ProductsStore.Back.Procesos.DAO;
+﻿using ProductsStore.Back.Maestros;
+using ProductsStore.Back.Procesos.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,14 @@ namespace ProductsStore.Back.Procesos.Negocio
         internal int ValidarCodigo()
         {
             return new ProductosDAO().ValidarCodigo();
+        }
+        internal Productos BuscarProducto(string Prod)
+        {
+            return new ProductosDAO().BuscarProducto(Prod);
+        }
+        internal string EditarProducto(Productos prodEdit)
+        {
+            return new ProductosDAO().EditarProducto(prodEdit);
         }
     }
 }

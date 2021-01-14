@@ -14,6 +14,6 @@ namespace ProductsStore.Back.Maestros
         public string CategoriaProducto { get; set; }
         public string DisponiblidadProducto { get; set; }
         public int PrecioProducto { get; set; }
-        public int ImagenProducto { get; set; }
+        public string ImagenProducto { get; set; }
     }
 }

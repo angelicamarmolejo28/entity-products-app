@@ -26,5 +26,13 @@ namespace ProductsStore.Back.Fachada
         {
             return new ProductosNegocio().ValidarCodigo();
         }
+        public Productos BuscarProducto(string Prod)
+        {
+            return new ProductosNegocio().BuscarProducto(Prod);
+        }
+        public string EditarProducto(Productos prodEdit)
+        {
+            return new ProductosNegocio().EditarProducto(prodEdit);
+        }
     }
 }
