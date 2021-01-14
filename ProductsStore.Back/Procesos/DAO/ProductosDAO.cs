@@ -19,7 +19,7 @@ namespace ProductsStore.Back.Procesos.DAO
             string respuesta = null;
             using (SqlConnection con = new SqlConnection(Conexion))
             {
-                string sentencia = "exec Products_Prod_CRUD 1,''," + Nombre + "','" + Descripcion + "','"+Categoria+"','"+Disponibilidad+"','"+Precio+"','"+ImagenURL+"'";
+                string sentencia = "exec Products_Prod_CRUD 1,'','" + Nombre + "','" + Descripcion + "','"+Categoria+"','"+Disponibilidad+"','"+Precio+"','"+ImagenURL+"'";
                 SqlCommand cmd = new SqlCommand(sentencia, con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();

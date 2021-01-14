@@ -4,8 +4,6 @@
 
 
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main ">
-
-		
         <!-- Modal -->
         <div class="modal fade" id="ModalEquipo" tabindex="-1" role="dialog" aria-labelledby="ModalEquipoLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -23,7 +21,7 @@
                             <li class="list-group-item"><strong>Tania Mera</strong> - Editar</li>
                             <li class="list-group-item"><strong>Yasmani Martinez</strong> - Eliminar</li>
                             <li class="list-group-item"><strong>Adrian Ramirez</strong> - Listar</li>
-                    
+                            <li class="list-group-item"><strong>Camilo Gutierrez</strong> - Tester</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
