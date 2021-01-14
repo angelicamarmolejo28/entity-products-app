@@ -34,5 +34,13 @@ namespace ProductsStore.Back.Fachada
         {
             return new ProductosNegocio().EditarProducto(prodEdit);
         }
+        public string EliminarProducto(int idProducto)
+        {
+            return new ProductosNegocio().EliminarProducto(idProducto);
+        }
+        public List<Productos> ListarProducto()
+        {
+            return new ProductosNegocio().ListarProducto();
+        }
     }
 }

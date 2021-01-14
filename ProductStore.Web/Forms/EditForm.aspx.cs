@@ -76,6 +76,7 @@ namespace ProductStore.Web.Forms
                 txtDispo.Text = string.Empty;
                 ImagenCargada.ImageUrl = "";
                 txtCodProd.Text = string.Empty;
+                txtBuscar.Text = string.Empty;
             }
             else
             {
@@ -88,6 +89,7 @@ namespace ProductStore.Web.Forms
                 txtDispo.Text = string.Empty;
                 ImagenCargada.ImageUrl = "";
                 txtCodProd.Text = string.Empty;
+                txtBuscar.Text = string.Empty;
             }
         }
     }

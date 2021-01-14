@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Control</title>
 
-    <asp:PlaceHolder runat="server">
+   <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
@@ -80,8 +80,8 @@
 		<ul class="nav menu">
 			<li ><a href="CrearForm.aspx"><em class="fa fa-plus-circle">&nbsp;</em> Crear Productos</a></li>
 			<li><a href="EditForm.aspx"><em class="fa fa-edit">&nbsp;</em> Editar Productos</a></li>
-			<li><a href="DeleteForm.aspx"><em class="fa fa-th-list">&nbsp;</em> Detalle de Productos</a></li>
-			<li><a href="ListForm.aspx"><em class="fa fa-trash-alt">&nbsp;</em> Eliminar Productos</a></li>
+			<li><a href="ListForm.aspx"><em class="fa fa-th-list">&nbsp;</em> Detalle de Productos</a></li>
+			<li><a href="DeleteForm.aspx"><em class="fa fa-trash-alt">&nbsp;</em> Eliminar Productos</a></li>
             <li><asp:LinkButton ID="lbtnCerrarSesion" OnClick="lbtnCerrarSesion_Click" runat="server"><em class="fa fa-power-off">&nbsp;</em> Cerrar Sesión</asp:LinkButton></li>
 			<%--<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Cerrar Sesión</a></li>--%>
 		</ul>

@@ -27,5 +27,13 @@ namespace ProductsStore.Back.Procesos.Negocio
         {
             return new ProductosDAO().EditarProducto(prodEdit);
         }
+        internal string EliminarProducto(int idProducto)
+        {
+            return new ProductosDAO().EliminarProducto(idProducto);
+        }
+        internal List<Productos> ListarProducto()
+        {
+            return new ProductosDAO().ListarProducto();
+        }
     }
 }
