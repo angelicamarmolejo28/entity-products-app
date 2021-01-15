@@ -34,7 +34,7 @@ namespace ProductsStore.Back.Procesos.DAO
 
         internal int ValidarCodigo()
         {
-            int cod = 0;
+            int cod = 1;
             using (SqlConnection con = new SqlConnection(Conexion))
             {
                 string sentencia = "exec Products_Prod_CRUD 2,'','','','','','',''";
