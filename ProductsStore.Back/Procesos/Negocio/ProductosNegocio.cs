@@ -35,5 +35,9 @@ namespace ProductsStore.Back.Procesos.Negocio
         {
             return new ProductosDAO().ListarProducto();
         }
+        internal List<Productos> FiltrarProducto(string Categoria)
+        {
+            return new ProductosDAO().FiltrarProducto(Categoria);
+        }
     }
 }

@@ -51,7 +51,7 @@
 
 			<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default" style="height:800px">
+				<div class="panel panel-default" style="height:850px">
 					<div class="panel-heading">
 						Formulario para Editar un Producto</div>
                     

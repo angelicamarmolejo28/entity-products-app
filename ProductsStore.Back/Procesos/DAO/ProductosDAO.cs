@@ -136,6 +136,32 @@ namespace ProductsStore.Back.Procesos.DAO
             }
         }
 
+        internal List<Productos> FiltrarProducto(string Categoria)
+        {
+            List<Productos> prodList = new List<Productos>();
+            using (SqlConnection con = new SqlConnection(Conexion))
+            {
+                string sentencia = "exec Products_Prod_CRUD 7,'','','','"+Categoria+"','','',''";
+                SqlCommand cmd = new SqlCommand(sentencia, con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Productos prodc = new Productos();
+                    prodc.CodigoProducto = rdr[0] == DBNull.Value ? 0 : rdr.GetInt32(0);
+                    prodc.NombreProducto = rdr[1] == DBNull.Value ? "" : rdr.GetString(1).Trim();
+                    prodc.DescripcionProducto = rdr[2] == DBNull.Value ? "" : rdr.GetString(2).Trim();
+                    prodc.CategoriaProducto = rdr[3] == DBNull.Value ? "" : rdr.GetString(3).Trim();
+                    prodc.DisponiblidadProducto = rdr[4] == DBNull.Value ? "" : rdr.GetString(4).Trim();
+                    prodc.PrecioProducto = rdr[5] == DBNull.Value ? 0 : Convert.ToInt32(rdr.GetValue(5));
+                    prodc.ImagenProducto = rdr[6] == DBNull.Value ? "" : rdr.GetString(6).Trim();
+                    prodList.Add(prodc);
+                }
+                return prodList;
+            }
+        }
+
 
     }
 }

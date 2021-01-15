@@ -42,5 +42,9 @@ namespace ProductsStore.Back.Fachada
         {
             return new ProductosNegocio().ListarProducto();
         }
+        public List<Productos> FiltrarProducto(string Categoria)
+        {
+            return new ProductosNegocio().FiltrarProducto(Categoria);
+        }
     }
 }
