@@ -1,11 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ProductStore.Web.Forms.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-
-
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main ">
-
-		
         <!-- Modal -->
         <div class="modal fade" id="ModalEquipo" tabindex="-1" role="dialog" aria-labelledby="ModalEquipoLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -21,9 +17,9 @@
 						<ul class="list-group mt-4" >
                             <li class="list-group-item"><strong>Angelica Marmolejo</strong>  - Crear</li>
                             <li class="list-group-item"><strong>Tania Mera</strong> - Editar</li>
-                            <li class="list-group-item"><strong>Yasmani Martinez</strong> - Eliminar</li>
+                            <li class="list-group-item"><strong>Yasmani Martinez</strong> - Eliminar desde Lista</li>
                             <li class="list-group-item"><strong>Adrian Ramirez</strong> - Listar</li>
-                    
+                            <li class="list-group-item"><strong>Camilo Gutierrez</strong> - Eliminar desde Busqueda</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
@@ -78,7 +74,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Detalles</h4>
-						<div class="easypiechart" id="easypiechart-red"  ><a href="CrearForm.aspx"><i class="fas fa-th-list fa-10x"  ></i></a> </div>
+						<div class="easypiechart" id="easypiechart-red"  ><a href="ListForm.aspx"><i class="fas fa-th-list fa-10x"  ></i></a> </div>
 					</div>
 				</div>
 			</div>

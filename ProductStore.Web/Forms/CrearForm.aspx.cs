@@ -15,6 +15,7 @@ namespace ProductStore.Web.Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             alertVal.Visible = false;
+            alertsucc.Visible = false;
             if (new Utils.Utils().sesionCerrada()) return;
             txtCodProd.Enabled = false;
 
@@ -57,17 +58,19 @@ namespace ProductStore.Web.Forms
             }
             else
             {
-
+                ImagenDataURL64 = ImagenCargada.ImageUrl;
                 string respuesta = new Fachada().CrearProducto(txtNombre.Text.Trim(), txtDescr.Text.Trim(), ddlCategoria.SelectedItem.Text, ddlDisponibilidad.SelectedItem.Text, Convert.ToInt32(txtPrecio.Text), ImagenDataURL64);
-
-                alertVal.Visible = true;
-                lblAlerta.Text = respuesta;
+                txtCodProd.Text = Convert.ToString(new Fachada().ValidarCodigo());
+                alertsucc.Visible = true;
+                lblsucc.Text = respuesta;
 
                 txtNombre.Text = string.Empty;
                 txtDescr.Text = string.Empty;
                 txtPrecio.Text = string.Empty;
                 ddlCategoria.SelectedIndex = 0;
                 ddlDisponibilidad.SelectedIndex = 0;
+                ImagenCargada.ImageUrl = "";
+                    
                 lbtnSubir.Visible = true;
                 lbtnCrearProducto.Visible = false;
             }
@@ -76,19 +79,19 @@ namespace ProductStore.Web.Forms
 
         protected void lbtnSubir_Click(object sender, EventArgs e)
         {
-            int TamañoImagen = FileUpload1.PostedFile.ContentLength;
-            byte[] ImagenOrginal = new byte[TamañoImagen];
-
-            FileUpload1.PostedFile.InputStream.Read(ImagenOrginal, 0, TamañoImagen);
-
-            Bitmap ImagenBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
-
-            ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOrginal);
-
-            ImagenCargada.ImageUrl = ImagenDataURL64;
-
-            lbtnCrearProducto.Visible = true;
-            lbtnSubir.Visible = false;
+            ImagenDataURL64 = "~//ImagenesProductos//" + FileUpload1.FileName;
+            if (FileUpload1.HasFile)
+            {
+                FileUpload1.SaveAs(Server.MapPath("~/ImagenesProductos/" + FileUpload1.FileName));
+                ImagenCargada.ImageUrl = ImagenDataURL64;
+                lbtnCrearProducto.Visible = true;
+                lbtnSubir.Visible = false;
+            }
+            else
+            {
+                alertVal.Visible = true;
+                lblAlerta.Text = "Por favor seleccionar una imagen para cargar";
+            }
         }
     }
 }
