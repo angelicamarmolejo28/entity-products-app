@@ -79,7 +79,7 @@
             <div class="col-lg-12">
             </div>
             <div class="container col-md-11" style="margin-left: 1%">
-                <div class="panel panel-default" style="height: 830px">
+                <div class="panel panel-default" style="height: 1250px">
                     <div class="panel-body tabs">
                         <ul class="nav nav-tabs">
                             <li><a href="#tab1" data-toggle="tab">Eliminar Productos desde una Lista</a></li>
@@ -149,7 +149,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Imagen Producto">
                                                 <ItemTemplate>
-                                                    <asp:Image ID="ImagenCargada" CssClass="img-responsive img-rounded" ImageUrl='<%# Eval("ImagenProducto") %>' runat="server" />
+                                                    <asp:Image ID="ImagenCargada" Width="50%" CssClass="img-responsive img-rounded" ImageUrl='<%# Eval("ImagenProducto") %>' runat="server" />
                                                 </ItemTemplate>
                                                 <ItemStyle />
                                             </asp:TemplateField>

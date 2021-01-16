@@ -31,7 +31,7 @@
 
 			<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default" style="height:850px">
+				<div class="panel panel-default" style="height:1250px">
 					<div class="panel-heading">
 						Lista de Productos</div>
                     
@@ -93,7 +93,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Imagen Producto">
                                                 <ItemTemplate>
-                                                    <asp:Image ID="ImagenCargada" CssClass="img-responsive img-rounded" ImageUrl='<%# Eval("ImagenProducto") %>' runat="server" />
+                                                    <asp:Image ID="ImagenCargada" Width="50%" CssClass="img-responsive img-rounded" ImageUrl='<%# Eval("ImagenProducto") %>' runat="server" />
                                                 </ItemTemplate>
                                                 <ItemStyle />
                                             </asp:TemplateField>
