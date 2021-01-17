@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Modal -->
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-        <ContentTemplate>
+
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -166,8 +165,7 @@
 
                                     </div>
                                     <div class="tab-pane fade" id="tab2">
-                                        <asp:UpdatePanel runat="server">
-                                            <ContentTemplate>
+                                      
                                                 <label style="margin-top: 3%; margin-left: 1%">Producto a Buscar para Eliminar:</label>
                                                 <div class="col-md-6 input-group" style="margin-left: 1%; margin-bottom: 1%">
                                                     <asp:TextBox ID="txtBuscar" class="form-control input-md" PlaceHolder="Ingrese nombre, categoría o descripción del producto a Eliminar" min-width="80%" runat="server"></asp:TextBox>
@@ -211,8 +209,7 @@
                                                     </div>
 
                                                 </div>
-                                            </ContentTemplate>
-                                        </asp:UpdatePanel>
+                                           
 
                                         <%--Grilla de respuesta del Servicio--%>
                                     </div>
@@ -228,11 +225,7 @@
                 </div>
                 <!-- /.row -->
             </div>
-        </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="btnchat" />
-        </Triggers>
-    </asp:UpdatePanel>
+      
 
     <!--/.row-->
 </asp:Content>

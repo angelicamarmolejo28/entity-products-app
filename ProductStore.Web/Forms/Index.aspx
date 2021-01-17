@@ -15,11 +15,11 @@
                     <div class="modal-body">
                         Las Funciones  diseñadas y elaboradas por:
 						<ul class="list-group mt-4" >
-                            <li class="list-group-item"><strong>Angelica Marmolejo</strong>  - Crear</li>
-                            <li class="list-group-item"><strong>Tania Mera</strong> - Editar</li>
+                            <li class="list-group-item"><strong>Camilo Gutierrez</strong>  - Crear</li>
+                            <li class="list-group-item"><strong>Tania Mera</strong> - Eliminar desde Una Búsqueda</li>
                             <li class="list-group-item"><strong>Yasmani Martinez</strong> - Eliminar desde Lista</li>
                             <li class="list-group-item"><strong>Adrian Ramirez</strong> - Listar</li>
-                            <li class="list-group-item"><strong>Camilo Gutierrez</strong> - Eliminar desde Busqueda</li>
+                            <li class="list-group-item"><strong>Angélica Marmolejo</strong> - Editar</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
