@@ -165,6 +165,8 @@
 
                                     </div>
                                     <div class="tab-pane fade" id="tab2">
+                                        <asp:UpdatePanel ID="updatepnl" runat="server">
+                                            <ContentTemplate> 
                                       
                                                 <label style="margin-top: 3%; margin-left: 1%">Producto a Buscar para Eliminar:</label>
                                                 <div class="col-md-6 input-group" style="margin-left: 1%; margin-bottom: 1%">
@@ -209,7 +211,12 @@
                                                     </div>
 
                                                 </div>
-                                           
+                                                </ContentTemplate>
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="btnchat" ></asp:AsyncPostBackTrigger>
+                                            </Triggers>
+                                        </asp:UpdatePanel>
+
 
                                         <%--Grilla de respuesta del Servicio--%>
                                     </div>
